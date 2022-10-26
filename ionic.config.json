@@ -1,0 +1,7 @@
+{
+  "name": "NasheQrEnd",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
