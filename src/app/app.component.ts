@@ -58,6 +58,11 @@ export class AppComponent {
       name: 'Cerrar Sesión',
       redirecTo: '/login'
     },
+    {
+      icon: 'log-out-outline',
+      name: 'Docente',
+      redirecTo: '/menu-docente'
+    },
   ];
   componente: Componente[] = [
     {

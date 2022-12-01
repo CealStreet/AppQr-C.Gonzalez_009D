@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 
 
 
@@ -13,13 +14,17 @@ import { MenuController } from '@ionic/angular';
 export class InicioPage implements OnInit {
 
 
-  constructor(private menuController: MenuController) { }
+  constructor(private menuController: MenuController, private navController: NavController) { }
 
   Usuario=localStorage.getItem('nombre')
 
 
   ngOnInit() {
    
+  }
+  cerrarSesion() {
+    localStorage.clear()
+    this.navController.navigateRoot('login');
   }
 
   mostrarMenu(){

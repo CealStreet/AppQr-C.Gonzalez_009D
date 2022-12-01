@@ -29,26 +29,39 @@ export class LoginPage implements OnInit {
   }
 
   async Ingresar(){
-    var f = this.formularioLogin.value;
-    var a=0;
-    this.registroService.getUsuarios().then(datos=>{ 
-      this.usuarios = datos; 
-      if (!datos || datos.length==0){
+    var f = this.formularioLogin.value; 
+    var a = 0;
+
+
+    this.registroService.getUsuarios().then(datos => { 
+      this.usuarios=datos;
+      if (!datos || datos.length==0)
+      {
         return null;
       }
+
       for (let obj of this.usuarios){
         if (f.correo == obj.correoUsuario && f.password==obj.passUsuario){
           a=1;
           console.log('ingresado');
-          localStorage.setItem('ingresado','true');
-          this.navController.navigateRoot('inicio');
+          localStorage.setItem('ingresado', 'true');
+          localStorage.setItem('nombre',obj.nomUsuario);
+
+
+
+          if(obj.tipoUsuario === 'Estudiante'){
+            localStorage.setItem('estudiante', 'true');
+            this.navController.navigateRoot('menu-estudiante');
+
+          }
+          else{
+            localStorage.setItem('docente', 'true');
+            this.navController.navigateRoot('menu-docente');
+          }
+          }
         }
-      }//findelfor
-      if(a==0){
-        this.alertMsg();
-      }
-    })
-  }//findelmetodo
+      })
+  }
 
   async alertMsg(){
     const alert = await this.alertController.create({

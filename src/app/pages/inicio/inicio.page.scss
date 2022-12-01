@@ -3,10 +3,10 @@
     flex-direction: column-reverse;
     justify-content: space-around;
     height: 100%;
-    color: aqua;
+    color: rgb(15, 15, 15);
 }
 
 .fondo {
     --background: rgb(22, 116, 133);
-    --background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)), url("/assets/tiempo.jpg") no-repeat center center;
+    --background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)), url("/assets/Fondo.jpg") no-repeat center center;
 }
