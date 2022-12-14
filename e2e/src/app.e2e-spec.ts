@@ -6,9 +6,18 @@ describe('new App', () => {
   beforeEach(() => {
     page = new AppPage();
   });
-
-  it('should be blank', () => {
+  it('Prueba 1', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toContain('Start with Ionic UI Components');
+    expect(page.getTitleText()).toContain('Bienvenido Estudiante');
   });
+  it('Prueba 2', async () => {
+    await page.navigateTo();
+     expect(await page.getTitleTextH2()).toEqual('Hola Estudiante');
+   });
+
+
+   it('Prueba 3', async () => {
+    await page.navigateTo();
+     expect(await page.getTitleTextPar()).toEqual('Encuentra el error');
+   });
 });

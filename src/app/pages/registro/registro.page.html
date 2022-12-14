@@ -32,6 +32,20 @@
                     <ion-label position="floating">Confirmar Password</ion-label>
                     <ion-input type="password" formControlName="confirmaPass"></ion-input>
                 </ion-item>
+                <ion-item>
+                    <h1>Tipo</h1>
+                </ion-item>
+
+                <ion-item>
+                    <ion-segment value="Alumno" formControlName="tipo">
+                        <ion-segment-button value="Estudiante">
+                            <ion-label>Estudiante</ion-label>
+                        </ion-segment-button>
+                        <ion-segment-button value="Docente">
+                            <ion-label>Docente</ion-label>
+                        </ion-segment-button>
+                    </ion-segment>
+                </ion-item>
 
             </form>
             <br>

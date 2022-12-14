@@ -21,7 +21,7 @@ ion-card-subtitle {
 }
 
 ion-content {
-    --background: linear-gradient(180deg, #208658 0, #2f9575 12.5%, #33a8a4 25%, #378795 37.5%, #1dbcbc 50%, #279696 62.5%, #268888 75%, #8ce6c1 87.5%, #1d9eb8 100%);
+    --background: url("/assets/Fondo.jpg") no-repeat center center
 }
 
 .ima {
@@ -35,11 +35,11 @@ ion-content {
 }
 
 ion-item {
-    border: black 1px solid;
+    border: rgb(192, 3, 44) 1px solid;
     margin-right: 10px;
     margin-left: 10px;
     margin-top: 0.5px;
-    --background: white;
+    --background: rgb(7, 93, 223);
     color: black;
 }
 

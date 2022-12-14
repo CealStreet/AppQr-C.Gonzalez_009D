@@ -6,6 +6,7 @@ export interface Usuario{
   correoUsuario:string;
   passUsuario:string;
   repassUsuario: string; 
+  tipoUsuario: string;
 }
 
 const USERS_KEY = 'my-usuarios';  
@@ -15,35 +16,35 @@ const USERS_KEY = 'my-usuarios';
 })
 export class RegistroserviceService {
 
-  private _storage: Storage;
+  private _storage: Storage
+  newUsuario: Usuario = <Usuario>{};
 
-  constructor(private storage: Storage) { 
+  constructor(private storage: Storage) {
     this.init();
    }
 
-   //creamos el storage de Usuarios
-    async init(){
+   async init(){
     const storage = await this.storage.create();
-    this._storage = storage;
+    this._storage= storage;
   }
 
-  //creamos un Usuario
-  async addUsuario(dato: Usuario):Promise<any>{
-   return this.storage.get(USERS_KEY).then((datos: Usuario[])=>{ 
-     if(datos){
-       datos.push(dato);    //agregamos un objeto al storage
-       return this.storage.set(USERS_KEY,datos);
-     }
-     else{
-       return this.storage.set(USERS_KEY, [dato]);
-     }
-   })
-  }//findelmetodo
 
-  //obtener todos los objetos desde el storage 
-  async getUsuarios():Promise<Usuario[]>{
+  async addDatos(dato: Usuario):Promise<any>{
+    return this.storage.get(USERS_KEY).then((datos : Usuario[])=>{
+       if (datos) {
+         datos.push(dato);
+         return this.storage.set(USERS_KEY, datos);
+       }else {
+         return this.storage.set(USERS_KEY, [dato]);
+       }
+ 
+     })
+  }
+
+  async getUsuarios(): Promise<Usuario[]>{
     return this.storage.get(USERS_KEY);
   }
+
 
 
 }
